@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, CardItem } from 'react-native'
 import CardMenu from '../component/cardMenu'
 import { ScrollView } from 'react-native-gesture-handler'
 import { useDispatch, useSelector } from "react-redux"
@@ -10,7 +10,7 @@ import { getData } from "../action"
 
 
 const Home = () => {
-    
+
     const [Head, setHead] = React.useState(["Country", "New", "Active", "Recovered", "Total"])
     const dispatch = useDispatch()
     const { dataAPI } = useSelector((state) => {
@@ -35,17 +35,21 @@ const Home = () => {
         return tablebody
     }
 
-{
+    {
         return (
-            <ScrollView style={{backgroundColor: '#ecf0f1'}}>
+            <ScrollView style={{ backgroundColor: '#ecf0f1' }}>
                 <Image source={{ uri: "https://devpolicy.org/wp-content/uploads/2015/02/image13.png" }} style={{ height: 300, width: 400, borderRadius: 0 }} />
                 <Text style={styles.home}>News</Text>
                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingTop: 5, marginTop: 10, width: "100%" }}>
 
-                <CardMenu names={'Total'}/>
-                <CardMenu names={'Recovered'}/>
-                <CardMenu names={'Deaths'}/>
-                <Image source={{ uri: "https://img.okezone.com/content/2020/08/25/18/2267287/berita-baik-afrika-akan-dinyatakan-bebas-polio-liar-d1Z5b21PFU.jpg" }} style={{ height: 300, width: 400, borderRadius: 0 }} />
+
+
+
+                    <CardMenu names={'Total'}/>
+                    {/* <CardMenu icons={require('../image/iconMenu/worker')} names={'General Service'} /> */}
+                    <CardMenu names={'Recovered'} />
+                    <CardMenu names={'Deaths'} />
+                    <Image source={{ uri: "https://img.okezone.com/content/2020/08/25/18/2267287/berita-baik-afrika-akan-dinyatakan-bebas-polio-liar-d1Z5b21PFU.jpg" }} style={{ height: 300, width: 400, borderRadius: 0 }} />
 
 
                     {/* <CardMenu icons={require('../image/iconMenu/automation.png')} names={'General Service'} /> */}
@@ -63,13 +67,13 @@ const Home = () => {
 }
 
 const styles = StyleSheet.create({
-    root:{
+    root: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
         // backgroundColor: "pink"
     },
-    button:{
+    button: {
         alignSelf: "center",
         padding: 15
     },
@@ -79,7 +83,7 @@ const styles = StyleSheet.create({
         fontSize: 40,
         alignSelf: 'center',
         // backgroundColor: '#0abde3'
-      },
+    },
 })
 
 export default Home
