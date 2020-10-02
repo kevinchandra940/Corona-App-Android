@@ -14,3 +14,6 @@
 - Latest Corona Info
 - Login & Register (keep login)
 - Stack, Tab, Drawer navigation use
+
+
+## Created by Kevin Chandra
